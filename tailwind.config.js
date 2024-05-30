@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
+const flowbite = require("flowbite-react/tailwind");
+
 module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    'node_modules/flowbite-react/lib/esm/**/*.js'
+    'node_modules/flowbite-react/lib/esm/**/*.js',
+    flowbite.content(),
   ],
   theme: {
     extend: {},
@@ -22,6 +25,7 @@ module.exports = {
         200: '#20C5E6',
         300: '#3D9FB3',
         400: '#457680',
+        500: '#CFE5ED',
       },
       'rosa': {
         100: '#FDF2F8',
@@ -46,10 +50,12 @@ module.exports = {
       'marrom':
       {
         100: '#e6dad1',
+        800: '#9d5a4d',
       }
     },
   },
   plugins: [
     require('flowbite/plugin'),
+    flowbite.plugin(),
   ],
 }

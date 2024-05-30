@@ -5,10 +5,9 @@ import Category from "../../../models/Category"
 function ListCategories() {
     const [categories, setcategories] = useState<Category[]>([])
 
-
     async function searchCategory() {
         try {
-            await search("/categories", setcategories)
+            await search(`/categories`, setcategories)
         } catch (error: any) {
             alert('Não foi possível buscar as categorias')
         }
@@ -20,13 +19,6 @@ function ListCategories() {
 
     return (
         <>
-            <div>
-                {categories.map((category) => (
-                    <p>
-                        {category.name}
-                    </p>
-                ))}
-            </div>
         </>
     )
 }
